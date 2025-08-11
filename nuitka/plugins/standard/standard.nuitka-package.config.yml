@@ -1537,6 +1537,19 @@
     - depends:
         - 'attrs'
 
+- module-name: 'fast_ssim'
+  dlls:
+    - from_filenames:
+        relative_path: 'resources'
+        prefixes:
+          - 'ssim'
+      when: 'win32'
+    - from_filenames:
+        relative_path: 'resources'
+        prefixes:
+          - 'libssim'
+      when: 'linux'
+
 - module-name: 'feedparser.html' # checksum: 8b17e6bc
   anti-bloat:
     - description: 'use SGML code more naturally'
@@ -9072,6 +9085,11 @@
   implicit-imports:
     - depends:
         - '._noop'
+
+- module-name: 'wordninja_enhanced'
+  data-files:
+    - dirs:
+        - 'resources'
 
 - module-name: 'wx' # checksum: 9a4d4164
   options:
